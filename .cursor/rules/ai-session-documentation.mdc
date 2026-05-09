@@ -1,0 +1,23 @@
+---
+description: Session summaries (SSR), ADR/DDR templates, and audit trail habits for AI-assisted work
+alwaysApply: true
+---
+
+# AI session and decision documentation
+
+When you finish a **major task** or a **meaningful chunk of work** in this repo:
+
+1. **Session summary (SSR)** 
+ - Ensure there is a record under `docs/ai-sessions/` (the `stop` hook drafts one from the transcript; review and fill gaps). 
+ - For structure, follow `docs/templates/ssr/ssr-template.md`.
+
+2. **Architecturally significant decisions** 
+ - If the session chose or changed something that affects system structure, security, data, or long-term maintainability, add or update an **ADR** using `docs/templates/ssr/adr-template.md` (suggested path: `docs/decisions/adr-XXX-short-title.md`).
+
+3. **Day-to-day design decisions** 
+ - For UI/API/component-level choices, use a **DDR** from `docs/templates/ssr/ddr-template.md` (suggested path: `docs/decisions/ddr-XXX-short-title.md`).
+
+4. **Git**  
+   - Tell the user when SSR/decision docs are ready to **review, commit, and push** (unless project hooks already committed them).
+
+This complements GitButler + Cursor hooks: hooks capture edits and commits; you still refine SSR text and link ADR/DDR when decisions matter.

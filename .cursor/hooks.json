@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "hooks": {
+    "afterFileEdit": [
+      {
+        "command": "but cursor after-edit"
+      }
+    ],
+    "stop": [
+      {
+        "command": "python .cursor/hooks/session-summary.py"
+      },
+      {
+        "command": "but cursor stop"
+      }
+    ]
+  }
+}

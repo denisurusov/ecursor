@@ -1,4 +1,4 @@
-# DDR + ADR Template Pack + Session Documentation Strategy
+# SSR + ADR + DDR Template Pack + Session Documentation Strategy
 
 **Date**: 2025-05-09  
 **Purpose**: Standardize how we document AI-assisted sessions and design decisions.
@@ -15,10 +15,13 @@ Having a consistent structure for AI sessions (SSR), Architecture Significant Re
 
 ## Templates Included in this Pack
 
-### 1. ADR Template (`docs/templates/ssr/adr-template.md`)
+### 1. SSR Template (`docs/templates/ssr/ssr-template.md`)
+For **AI session summaries** — captures the session objective, ASRs derived from prompts, key changes, and links to any ADR/DDR decisions made during the session.
+
+### 2. ADR Template (`docs/templates/ssr/adr-template.md`)
 For **architecturally significant** decisions (technology choices, system structure, scalability, security models, data strategy, etc.).
 
-### 2. DDR Template (`docs/templates/ssr/ddr-template.md`)
+### 3. DDR Template (`docs/templates/ssr/ddr-template.md`)
 For **day-to-day design decisions** (UI patterns, code organization, API design, state management, error handling, component choices, etc.).
 
 ## Future Automation Note

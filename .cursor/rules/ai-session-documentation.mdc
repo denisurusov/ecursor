@@ -1,23 +1,31 @@
 ---
-description: Session summaries (SSR), ADR/DDR templates, and audit trail habits for AI-assisted work
+description: Session summaries (SSR), ASRs, ADR/DDR templates, and audit trail habits for AI-assisted work
 alwaysApply: true
 ---
 
 # AI session and decision documentation
 
+**Prompts and Architecture Significant Requirements (ASRs) are not 1:1.** That mapping only holds if every prompt is already a sharp, standalone requirement—which real sessions rarely are. In practice expect **many prompts** (retries, clarifications, tangents, incremental steering) **to one requirement** or **to a small set of ASRs** that describe what actually mattered for the product.
+
+Session summaries (SSRs) follow the same idea: they summarize a **meaningful chunk of work** (aligned to outcomes or requirements), not each prompt as its own document.
+
 When you finish a **major task** or a **meaningful chunk of work** in this repo:
 
-1. **Session summary (SSR)** 
- - Ensure there is a record under `docs/ai-sessions/` (the `stop` hook drafts one from the transcript; review and fill gaps). 
- - For structure, follow `docs/templates/ssr/ssr-template.md`.
+1. **Session summary (SSR)**
 
-2. **Architecturally significant decisions** 
- - If the session chose or changed something that affects system structure, security, data, or long-term maintainability, add or update an **ADR** using `docs/templates/ssr/adr-template.md` (suggested path: `docs/decisions/adr-XXX-short-title.md`).
+- Ensure there is a record under `docs/ai-sessions/` (the `stop` hook may draft one from the transcript; review and **consolidate**: merge redundant ASRs, drop noise, and describe **outcomes** rather than a blow-by-blow of every turn).
+- For structure, follow `docs/templates/ssr/ssr-template.md`. When filling the ASR table, prefer **fewer rows that each capture a real requirement**, and reference **ranges or clusters of prompts** (for example “prompts #3–#7”) where many turns served one intent.
 
-3. **Day-to-day design decisions** 
- - For UI/API/component-level choices, use a **DDR** from `docs/templates/ssr/ddr-template.md` (suggested path: `docs/decisions/ddr-XXX-short-title.md`).
+2. **Architecturally significant decisions**
 
-4. **Git**  
-   - Tell the user when SSR/decision docs are ready to **review, commit, and push** (unless project hooks already committed them).
+- If the work chose or changed something that affects system structure, security, data, or long-term maintainability, add or update an **ADR** using `docs/templates/ssr/adr-template.md` (suggested path: `docs/decisions/adr-XXX-short-title.md`).
 
-This complements GitButler + Cursor hooks: hooks capture edits and commits; you still refine SSR text and link ADR/DDR when decisions matter.
+3. **Day-to-day design decisions**
+
+- For UI/API/component-level choices, use a **DDR** from `docs/templates/ssr/ddr-template.md` (suggested path: `docs/decisions/ddr-XXX-short-title.md`).
+
+4.**Git**  
+
+- Tell the user when SSR/decision docs are ready to **review, commit, and push** (unless project hooks already committed them).
+
+This complements GitButler + Cursor hooks: hooks capture edits and commits; you still refine SSR text and link ADR/DDR when decisions matter. Treat hooks and transcripts as **raw signal**; SSRs and ASRs summarize **what changed for the product** once the many-to-one story is clear.
